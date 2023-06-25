@@ -1,0 +1,617 @@
+.section, .header, .header__ad, .product, .footer {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.section__content, .header__content, .header__ad__content, .footer__content {
+  max-width: 1200px;
+  width: 100%;
+}
+@media all and (width < 1440px) {
+  .section__content, .header__content, .header__ad__content, .footer__content {
+    max-width: 1100px;
+  }
+}
+@media all and (width < 1260px) {
+  .section__content, .header__content, .header__ad__content, .footer__content {
+    max-width: 900px;
+  }
+}
+@media all and (width < 1000px) {
+  .section__content, .header__content, .header__ad__content, .footer__content {
+    max-width: 700px;
+  }
+}
+@media all and (width < 620px) {
+  .section__content, .header__content, .header__ad__content, .footer__content {
+    max-width: 500px;
+  }
+}
+
+.section__double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media all and (width < 1260px) {
+  .section__double {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (width < 1000px) {
+  .header__ad__title, .header__ad__link {
+    font-size: 12px;
+  }
+}
+@media all and (width < 750px) {
+  .header__ad__title {
+    max-width: 80%;
+    width: 100%;
+  }
+}
+@media all and (width < 480px) {
+  .header__ad__title {
+    max-width: 65%;
+    width: 100%;
+  }
+}
+.header, .header__ad {
+  background-color: #454545;
+}
+
+.header__content, .header__ad__content {
+  display: flex;
+  padding: 16px 0;
+  justify-content: space-between;
+}
+@media all and (width < 500px) {
+  .header__content, .header__ad__content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.header__block {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+@media all and (width < 500px) {
+  .header__block {
+    justify-content: space-evenly;
+  }
+}
+@media all and (width < 500px) {
+  .header__block {
+    justify-content: flex-start;
+  }
+}
+
+@media all and (width < 400px) {
+  nav.header__block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+.header__action {
+  display: flex;
+  justify-content: space-between;
+  gap: 41px;
+}
+@media all and (width < 500px) {
+  .header__action {
+    justify-content: flex-end;
+  }
+}
+
+.header__ad__action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__ad__link {
+  cursor: pointer;
+  transition: opacity 0.7s;
+  color: #0066cc;
+  padding-right: 14px;
+  position: relative;
+  line-height: 170%;
+}
+.header__ad__link:hover {
+  opacity: 0.7;
+}
+.header__ad__link:active {
+  opacity: 0.3;
+}
+.header__ad__link::after {
+  display: block;
+  padding: 0;
+  align-items: center;
+  content: "";
+  width: 5px;
+  height: 8px;
+  background-image: url("/svg/arrowShopIphone.svg");
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 4px);
+}
+
+.header__icon {
+  cursor: pointer;
+  transition: opacity 0.7s;
+}
+.header__icon:hover {
+  opacity: 0.7;
+}
+.header__icon:active {
+  opacity: 0.3;
+}
+
+.header__link {
+  color: #dadada;
+  cursor: pointer;
+  transition: opacity 0.7s;
+  font-size: 12px;
+}
+.header__link:hover {
+  opacity: 0.7;
+}
+.header__link:active {
+  opacity: 0.3;
+}
+
+.header__ad {
+  background-color: white;
+}
+
+.header__ad__content {
+  padding: 12px 0;
+  font-size: 14px;
+}
+
+.header__ad__title {
+  color: #1d1d1f;
+  line-height: 170%;
+}
+
+.product {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.product__content {
+  display: grid;
+  gap: 20px;
+  text-align: center;
+  align-content: center;
+}
+
+.product__title {
+  font-size: 56px;
+  font-weight: 600;
+}
+
+.product__description {
+  font-size: 28px;
+}
+
+.product__action {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product__link {
+  color: #2997FF;
+  font-size: 20px;
+  padding-right: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.7s;
+}
+.product__link::after {
+  display: block;
+  content: "";
+  width: 7px;
+  height: 12px;
+  background-image: url("/svg/arrowAction.svg");
+  position: absolute;
+  right: 0;
+  top: calc(50% - 5px);
+}
+.product__link:hover {
+  opacity: 0.7;
+}
+.product__link:active {
+  opacity: 0.3;
+}
+
+.product-big {
+  max-height: 700px;
+  height: 100vh;
+  background-size: cover;
+}
+@media all and (width < 1000px) {
+  .product-big {
+    background-size: 150%;
+    max-height: 600px;
+  }
+}
+@media all and (width < 850px) {
+  .product-big {
+    max-height: 530px;
+  }
+}
+@media all and (width < 750px) {
+  .product-big {
+    max-height: 500px;
+  }
+}
+@media all and (width < 650px) {
+  .product-big {
+    max-height: 490px;
+  }
+}
+@media all and (width < 650px) {
+  .product-big {
+    max-height: 460px;
+  }
+}
+@media all and (width < 550px) {
+  .product-big {
+    max-height: 440px;
+  }
+}
+
+.product-small {
+  max-height: 580px;
+  height: 100vh;
+  background-size: cover;
+}
+.product-small .product__title {
+  font-size: 40px;
+}
+.product-small .product__description {
+  font-size: 20px;
+}
+@media all and (width < 1260px) {
+  .product-small {
+    max-height: 780px;
+  }
+}
+@media all and (width < 1000px) {
+  .product-small {
+    max-height: 600px;
+  }
+}
+@media all and (width < 900px) {
+  .product-small {
+    max-height: 600px;
+  }
+}
+
+.product--dark {
+  background-color: black;
+}
+.product--dark .product__title, .product--dark .product__description {
+  color: #f5f5f7;
+}
+
+.product--top .product__content {
+  align-content: flex-start;
+}
+
+.product--bottom .product__content {
+  align-content: flex-end;
+}
+
+.product--iphone-pro {
+  background-image: url(/img/iphone_pro.png);
+  background-color: #000;
+}
+
+.product--iphone {
+  background-image: url(/img/iphone.png);
+  background-color: #fafafa;
+}
+
+.product--iwatch {
+  background-image: url(/img/iwatch.png);
+  background-color: #000;
+}
+
+.product--trade-in {
+  background-image: url(/img/trade_in.png);
+  background-color: #fbfbfd;
+}
+
+.product--conference {
+  background-image: url(/img/conference.png);
+  background-color: #000;
+}
+
+.product--ipad {
+  background-image: url(/img/ipad.png);
+  background-color: #fff;
+}
+
+.product--small-business {
+  background-image: url(/img/small_business.png);
+  background-color: #000;
+}
+
+.product--gift {
+  background-image: url(/img/gift.png);
+  background-color: #fbfbfd;
+}
+
+.product--card {
+  background-image: url(/img/card.png);
+  background-color: #fbfbfd;
+}
+
+@media all and (width < 550px) {
+  .product--iphone {
+    background-position: center 95%;
+  }
+}
+@media all and (width < 1260px) {
+  .product--trade-in {
+    background-position: 50% 50px;
+  }
+}
+@media all and (width < 770px) {
+  .product--trade-in {
+    max-height: 550px;
+  }
+}
+@media all and (width < 725px) {
+  .product--trade-in {
+    max-height: 530px;
+    background-size: 120%;
+  }
+}
+@media all and (width < 670px) {
+  .product--trade-in {
+    max-height: 500px;
+  }
+}
+@media all and (width < 650px) {
+  .product--trade-in {
+    max-height: 480px;
+  }
+}
+@media all and (width < 630px) {
+  .product--trade-in {
+    max-height: 460px;
+    background-position: 50% 80px;
+  }
+}
+@media all and (width < 600px) {
+  .product--trade-in {
+    max-height: 440px;
+  }
+}
+@media all and (width < 580px) {
+  .product--trade-in {
+    max-height: 420px;
+  }
+}
+@media all and (width < 540px) {
+  .product--trade-in {
+    max-height: 400px;
+  }
+}
+@media all and (width < 500px) {
+  .product--trade-in {
+    background-size: 110%;
+    background-position: 50% 110px;
+  }
+}
+@media all and (width < 460px) {
+  .product--trade-in {
+    background-position: 50% 140px;
+  }
+}
+@media all and (width < 400px) {
+  .product--trade-in {
+    background-position: 50% 150px;
+  }
+}
+@media all and (width < 360px) {
+  .product--trade-in {
+    background-position: 50% 160px;
+  }
+}
+@media all and (width < 340px) {
+  .product--trade-in {
+    background-position: 50% 180px;
+  }
+}
+@media all and (width < 330px) {
+  .product--trade-in {
+    background-position: 50% 190px;
+  }
+}
+
+@media all and (width < 450px) {
+  .product--iphone {
+    background-position: center 90%;
+  }
+}
+@media all and (width < 1260px) {
+  .product--conference {
+    background-position: 50% -30px;
+  }
+}
+@media all and (width < 650px) {
+  .product--conference {
+    background-size: 150%;
+  }
+}
+@media all and (width < 620px) {
+  .product--conference {
+    background-position: 50% -10px;
+  }
+}
+@media all and (width < 580px) {
+  .product--conference {
+    background-position: 50% 10px;
+  }
+}
+@media all and (width < 530px) {
+  .product--conference {
+    background-position: 50% 30px;
+  }
+}
+@media all and (width < 500px) {
+  .product--conference {
+    background-position: 50% 40px;
+  }
+}
+@media all and (width < 480px) {
+  .product--conference {
+    background-position: 50% 50px;
+  }
+}
+@media all and (width < 460px) {
+  .product--conference {
+    background-position: 50% 70px;
+  }
+}
+@media all and (width < 420px) {
+  .product--conference {
+    background-position: 50% -20px;
+    max-height: 450px;
+  }
+}
+@media all and (width < 340px) {
+  .product--conference {
+    background-position: 50% -10px;
+  }
+}
+
+@media all and (width < 700px) {
+  .product--gift {
+    background-size: 150%;
+    background-position: 50% center;
+  }
+}
+@media all and (width < 400px) {
+  .product--gift {
+    background-position: 50% 170px;
+  }
+}
+@media all and (width < 380px) {
+  .product--gift {
+    background-position: 50% 180px;
+  }
+}
+@media all and (width < 350px) {
+  .product--gift {
+    background-position: 50% 200px;
+  }
+}
+
+@media all and (width < 500px) {
+  .product--card {
+    background-size: 200%;
+  }
+}
+@media all and (width < 450px) {
+  .product--card {
+    background-size: 220%;
+  }
+}
+@media all and (width < 400px) {
+  .product--card {
+    max-height: 560px;
+  }
+}
+@media all and (width < 360px) {
+  .product--card {
+    max-height: 540px;
+  }
+}
+@media all and (width < 330px) {
+  .product--card {
+    max-height: 510px;
+  }
+}
+
+.product--light .product__title, .product--light .product__description {
+  color: #1d1d1f;
+}
+
+.footer {
+  background-color: #f5f5f7;
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 39px 0;
+  justify-content: space-between;
+}
+
+@media all and (width < 1000px) {
+  .footer__content {
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 28px;
+  }
+}
+@media all and (width < 730px) {
+  .footer__content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media all and (width < 650px) {
+  .footer__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media all and (width < 500px) {
+  .footer__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.footer__section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer__title {
+  color: #1d1d1f;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.footer__links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer__links-list .list__item {
+  color: #424245;
+  font-size: 12px;
+  cursor: pointer;
+  transition: opacity 0.7s;
+}
+.footer__links-list .list__item:hover {
+  opacity: 0.7;
+}
+.footer__links-list .list__item:active {
+  opacity: 0.3;
+}
+
+/*# sourceMappingURL=style.css.map */
