@@ -1,0 +1,464 @@
+@use "../../lib/service.scss" as s;
+
+.header {
+    background-color: s.color('backgroundDark');
+    @extend .section;
+}
+
+.header__content {
+    @extend .section__content;
+    display: flex;
+    padding: s.space(4) 0;
+    justify-content: space-between;
+
+    @media all and (width < 500px) {
+        flex-direction: column;
+        gap: s.space(5);
+    }
+}
+
+.header__block {
+    display: flex;
+    gap: s.space(8);
+    align-items: center;
+
+    @media all and (width < 500px) {
+        justify-content: space-evenly;
+    }
+
+    @media all and (width < 500px) {
+        justify-content: flex-start;
+    }
+}
+
+nav.header__block {
+    @media all and (width < 400px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: s.space(5);
+    }
+}
+
+.header__action {
+    display: flex;
+    justify-content: space-between;
+    gap: 41px;
+
+    @media all and (width < 500px) {
+        justify-content: flex-end;
+    }
+}
+
+.header__ad__action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: s.space(2);
+}
+
+.header__ad__link {
+    @include s.click;
+    @include s.linkShopIphone;
+    line-height: 170%;
+}
+
+.header__icon {
+    @include s.click;
+}
+
+.header__link {
+    color: s.color('whiteLight');
+    @include s.click;
+
+    font-size: s.size('small');
+}
+
+.header__ad {
+    @extend .header;
+    background-color: white;
+}
+
+.header__ad__content {
+    @extend .header__content;
+    padding: s.space(3) 0;
+    font-size: s.size('medium');
+}
+
+.header__ad__title {
+    color: s.color('fontDark');
+    line-height: 170%;
+
+}
+
+.product {
+    @extend .section;
+
+    padding-top: s.space(20);
+    padding-bottom: s.space(20);
+
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.product__content {
+    display: grid;
+    gap: s.space(5);
+    text-align: center;
+    align-content: center;
+}
+
+.product__title {
+    font-size: 56px;
+    font-weight: 600;
+}
+
+.product__description {
+    font-size: 28px;
+}
+
+.product__action {
+    display: flex;
+    align-items: center;
+    gap: s.space(5);
+    justify-content: center;
+}
+
+.product__link {
+    font-size: s.size(5);
+
+    @include s.linkAction;
+    @include s.click;
+}
+
+.product-big {
+    max-height: 700px;
+    height: 100vh;
+
+    background-size: cover;
+
+    @media all and (width < s.screen('tablet')) {
+        background-size: 150%;
+        max-height: 600px;
+    }
+
+    @media all and (width < 850px) {
+        max-height: 530px;
+    }
+
+    @media all and (width < 750px) {
+        max-height: 500px;
+    }
+
+    @media all and (width < 650px) {
+        max-height: 490px;
+    }
+
+    @media all and (width < 650px) {
+        max-height: 460px;
+    }
+
+    @media all and (width < 550px) {
+        max-height: 440px;
+    }
+}
+
+.product-small {
+    max-height: 580px;
+    height: 100vh;
+
+    background-size: cover;
+
+    .product__title {
+        font-size: 40px;
+    }
+
+    .product__description {
+        font-size: 20px;
+    }
+
+    @media all and (width < 1260px) {
+        max-height: 780px;
+    }
+
+    @media all and (width < s.screen('tablet')) {
+        max-height: 600px;
+        // background-position: 50% 30px;
+    }
+
+    @media all and (width < 900px) {
+        max-height: 600px;
+        // background-position: 50% 50px;
+    }
+}
+
+.product--dark {
+    background-color: black;
+
+    .product__title, .product__description {
+        color: s.color('background');
+    }
+}
+
+.product--top {
+    .product__content {
+        align-content: flex-start;
+    }
+}
+
+.product--bottom {
+    .product__content {
+        align-content: flex-end;
+    }
+}
+
+$productImage: (
+    'iphone-pro' '/img/iphone_pro.png' #000,
+    'iphone' '/img/iphone.png' #fafafa,
+    'iwatch' '/img/iwatch.png' #000,
+    'trade-in' '/img/trade_in.png' #fbfbfd,
+    'conference' '/img/conference.png' #000,
+    'ipad' '/img/ipad.png' #fff,
+    'small-business' '/img/small_business.png' #000,
+    'gift' '/img/gift.png' #fbfbfd,
+    'card' '/img/card.png' #fbfbfd,
+);
+
+@each $class, $url, $color in $productImage {
+    .product--#{$class} {
+        background-image: url(#{$url});
+        background-color: $color;
+    }
+}
+
+@media all and (width < 550px) {
+    .product--iphone {
+        background-position: center 95%;
+    }
+}
+
+.product--trade-in {
+    @media all and (width < 1260px) {
+       background-position: 50% 50px;
+    }
+
+    @media all and (width < 770px) {
+        max-height: 550px;
+    }
+
+    @media all and (width < 725px) {
+        max-height: 530px;
+        background-size: 120%;
+    }
+
+    @media all and (width < 670px) {
+        max-height: 500px;
+    }
+
+    @media all and (width < 650px) {
+        max-height: 480px;
+    }
+
+    @media all and (width < 630px) {
+        max-height: 460px;
+        background-position: 50% 80px;
+    }
+
+    @media all and (width < 600px) {
+        max-height: 440px;
+    }
+
+    @media all and (width < 580px) {
+        max-height: 420px;
+    }
+
+    @media all and (width < 540px) {
+        max-height: 400px;
+    }
+
+    @media all and (width < 500px) {
+        background-size: 110%;
+        background-position: 50% 110px;
+    }
+    
+    @media all and (width < 460px) {
+        background-position: 50% 140px;
+    }
+
+    @media all and (width < 400px) {
+        background-position: 50% 150px;
+    }
+
+    @media all and (width < 360px) {
+        background-position: 50% 160px;
+    }
+
+    @media all and (width < 340px) {
+        background-position: 50% 180px;
+    }
+
+    @media all and (width < 330px) {
+        background-position: 50% 190px;
+    }
+}
+
+@media all and (width < 450px) {
+    .product--iphone {
+        background-position: center 90%;
+    }
+}
+
+
+.product--conference {
+    @media all and (width < s.screen('laptop')) {
+        background-position: 50% -30px;
+    }
+
+    @media all and (width < 650px) {
+        background-size: 150%;
+    }
+
+    @media all and (width < 620px) {
+        background-position: 50% -10px;
+    }
+
+    @media all and (width < 580px) {
+        background-position: 50% 10px;
+    }
+
+    @media all and (width < 530px) {
+        background-position: 50% 30px;
+    }
+
+    @media all and (width < 500px) {
+        background-position: 50% 40px;
+    }
+
+    @media all and (width < 480px) {
+        background-position: 50% 50px;
+    }
+
+    @media all and (width < 460px) {
+        background-position: 50% 70px;
+    }
+
+    @media all and (width < 420px) {
+        background-position: 50% -20px;
+        max-height: 450px;
+    }
+
+    @media all and (width < 340px) {
+        background-position: 50% -10px;
+    }
+}
+
+.product--gift {
+    @media all and (width < 700px) {
+        background-size: 150%;
+        background-position: 50% center;
+    }
+
+    @media all and (width < 400px) {
+        background-position: 50% 170px;
+    }
+
+    @media all and (width < 380px) {
+        background-position: 50% 180px;
+    }
+
+    @media all and (width < 350px) {
+        background-position: 50% 200px;
+    }
+}
+
+.product--card {
+    @media all and (width < 500px) {
+        background-size: 200%;
+    }
+
+    @media all and (width < 450px) {
+        background-size: 220%;
+    }
+
+    @media all and (width < 400px) {
+        max-height: 560px;
+    }
+
+    @media all and (width < 360px) {
+        max-height: 540px;
+    }
+
+    @media all and (width < 330px) {
+        max-height: 510px;
+    }
+}
+
+.product--light {
+    .product__title, .product__description {
+        color: s.color('fontDark');
+    }
+}
+
+.footer {
+    background-color: s.color('backgroundFooter');
+    @extend .section;
+}
+
+.footer__content {
+    @extend .section__content;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 39px 0;
+    justify-content: space-between;
+}
+
+@media all and (width < s.screen('tablet')) {
+    .footer__content {
+        grid-template-columns: repeat(5, 1fr);
+        row-gap: s.space(7);
+    }
+}
+
+@media all and (width < 730px) {
+    .footer__content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media all and (width < 650px) {
+    .footer__content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media all and (width < 500px) {
+    .footer__content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+.footer__section {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(4);
+}
+
+.footer__title {
+    color: s.color('textFooterTitle');
+    font-size: s.size('small');
+    font-weight: bold;
+}
+
+.footer__links-list {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(3);
+
+    .list__item {
+        color: s.color('textFooterLink');
+        font-size: s.size('small');
+
+        @include s.click;
+    }
+}

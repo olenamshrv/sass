@@ -1,0 +1,59 @@
+// @layer regular, adaptive;
+
+@use './space.scss' as s;
+@use './var.scss' as var;
+
+.section {
+    display: flex;
+    justify-content: center;
+    padding: 0 s.space(4);
+}
+
+$screenContentMap: (
+    desktop: 1100px,
+    laptop: 900px,
+    tablet: 700px,
+    mobile: 500px,
+);
+
+.section__content {
+    max-width: 1200px;
+    width: 100%;
+
+    @each $key, $value in var.$screenMap {
+
+        @media all and (width < $value) {
+            max-width: map-get($screenContentMap, $key);
+        }
+
+    }
+}
+
+.section__double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media all and (width < var.screen('laptop')) {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media all and (width < var.screen('tablet')) {
+    .header__ad__title, .header__ad__link {
+        font-size: var.size('small');
+    }
+}
+
+@media all and (width < 750px) {
+    .header__ad__title {
+        max-width: 80%;
+        width: 100%;
+    }
+}
+
+@media all and (width < 480px) {
+    .header__ad__title {
+        max-width: 65%;
+        width: 100%;
+    }
+}
